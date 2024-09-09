@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Trung Bình Cộng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tính Trung Bình Cộng</h1>
+        <form id="averageForm">
+            <div class="input-group">
+                <label for="number1">Nhập số thứ nhất:</label>
+                <input type="number" id="number1" required>
+            </div>
+            <div class="input-group">
+                <label for="number2">Nhập số thứ hai:</label>
+                <input type="number" id="number2" required>
+            </div>
+            <button type="submit">Tính Trung Bình Cộng</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('averageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Lấy giá trị từ input
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+
+            // Tính trung bình cộng
+            const average = (num1 + num2) / 2;
+
+            // Hiển thị kết quả
+            document.getElementById('result').innerHTML = `Trung bình cộng của ${num1} và ${num2} là: ${average}`;
+        });
+    </script>
+</body>
+</html>
